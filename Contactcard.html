@@ -8,17 +8,13 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script type="text/javascript">
 
-			//Edit 1: Having major issues with the 'description' being 'saved' for each individual contact card.
-			//When I try to add two contact cards at the same time, the first contact card's description is updated to the second contact card's description
-			//Defining the variable 'descript' is not recognized outside of the form . submit 
+
 			$(document).ready(function(){
 				$('form').submit(function(){
 					$('#cardspace').append('<div>' + '<div class="contactcard">' + '<p>' + $('#first-nameinput').val() + ' ' + $('#last-nameinput').val() + '</p>'+ '<p>' + '(Click for description!)' + '</p>' + '</div>' + '<div class="descript">' + '<p>' + $('#description').val() + '</p>' +'</div>');
 					// $('#cardspace').append('<div class="descript">' + '<p>' + $('#description').val() + '</p>');
 					return false
 				})
-
-			//Edit 2: Having trouble making the code only toggle the children divs when the parent div is toggled
 
 				$('div').on('click','div',function(){
 					$(this).find('.contactcard').toggle();
